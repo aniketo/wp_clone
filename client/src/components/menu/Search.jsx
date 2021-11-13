@@ -7,21 +7,21 @@ const useStyle = makeStyles(theme => ({
 
     component: {
         background: "#f6f6f6",
-        height:43,
-        display:"flex",
-        alignItems:"center",
+        height: 43,
+        display: "flex",
+        alignItems: "center",
     },
     search: {
         position: 'relative',
         borderRadius: 18,
         backgroundColor: "#FFFFFF",
-        margin:"0 13px",
+        margin: "0 13px",
 
         width: '100%',
 
     },
     searchIcon: {
-        color:"#919191",
+        color: "#919191",
         padding: theme.spacing(0, 2),
         height: '100%',
         position: 'absolute',
@@ -31,14 +31,14 @@ const useStyle = makeStyles(theme => ({
 
     },
     inputRoot: {
-      width:"100%"
+        width: "100%"
     },
     inputInput: {
         padding: theme.spacing(1, 1, 1, 0),
         // vertical padding + font size from searchIcon
-        paddingLeft: 65 ,
-        fontSize:14,
-        height:15,
+        paddingLeft: 65,
+        fontSize: 14,
+        height: 15,
 
         transition: theme.transitions.create('width'),
         width: '100%',
@@ -46,7 +46,7 @@ const useStyle = makeStyles(theme => ({
     },
 }))
 
-const Search = () => {
+const Search = ({setText}) => {
 
     const classes = useStyle();
 
@@ -64,8 +64,13 @@ const Search = () => {
                         input: classes.inputInput,
                     }}
                     inputProps={{'aria-label': 'search'}}
+                    onChange={(e) => {
+                        setText(e.target.value);
+
+                    }}
                 />
-            </Box> </Box>
+            </Box>
+        </Box>
     )
 }
 

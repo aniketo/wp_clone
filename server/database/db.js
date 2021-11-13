@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 
 const Connection = async (db_user, db_pass) => {
-    const URL = `mongodb+srv://aniket:hy4D16ECTVy4tlxn@chatapp.cpenl.mongodb.net/CHATAPP?retryWrites=true&w=majority`
+    const URL = `mongodb+srv://${db_user}:${db_pass}@chatapp.cpenl.mongodb.net/CHATAPP?retryWrites=true&w=majority`
 
     try {
         await mongoose.connect(URL, {
